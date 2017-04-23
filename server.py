@@ -8,11 +8,21 @@ app.jinja_env.undefined = StrictUndefined
 app.jinja_env.auto_reload = True
 
 # Required to use Flask sessions and the debug toolbar
-app.secret_key = "ABC"
+app.secret_key = "H4587YWVJUFT7YGW57HGW457H498209238SERUGH" #very secret
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-# YOUR ROUTES GO HERE
+@app.route('/application-form')
+def application_form():
+    return render_template('application-form.html',
+                            title='Application Form',
+                            type='Application Form')
 
+@app.route('/application-success')
+def application_response():
+    return render_template('application-response.html')
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
