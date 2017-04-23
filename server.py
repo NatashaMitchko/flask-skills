@@ -16,13 +16,29 @@ def index():
 
 @app.route('/application-form')
 def application_form():
-    return render_template('application-form.html',
-                            title='Application Form',
-                            type='Application Form')
+    title = "Apply Now"
+    return render_template('application-form.html', title=title)
 
 @app.route('/application-success')
 def application_response():
-    return render_template('application-response.html')
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
+    salary = request.form.get('salary')
+    job = request.form.get('job')
+
+    if job == 'SWE':
+        title = 'Software Engineering'
+    elif job == 'QA':
+        title = 'Quality Assurance Engineering'
+    else:
+        title = 'Product Management'
+
+    return render_template('application-response.html',
+                            title=title,
+                            first_name=first_name,
+                            last_name=last_name,
+                            salary=salary,
+                            job=job)
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
