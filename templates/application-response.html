@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{ title }} Application Recieved</h1>
-<p>Thank you {{ first_name }} {{ last_name }}
-Here are some {{ job }} jobs that pay at least {{ salary }} a year!
+<h1>{{ job }} Application Recieved</h1>
+<p>Thank you {{ first_name }} {{ last_name }} for applying to be a
+{{ job }}. We've recorded that your minimum salary requirement is {{ salary }}.
 </p>
+<a href="/application-form">Apply for another role</a>
 {% endblock %}

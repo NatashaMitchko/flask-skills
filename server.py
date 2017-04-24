@@ -28,15 +28,7 @@ def application_response():
     salary = "${:,.2f}".format(float(salary))
     job = request.form.get('job')
 
-    if job == 'SWE':
-        title = 'Software Engineering'
-    elif job == 'QA':
-        title = 'Quality Assurance Engineering'
-    else:
-        title = 'Product Management'
-
     return render_template('application-response.html',
-                            title=title,
                             first_name=first_name,
                             last_name=last_name,
                             salary=salary,
