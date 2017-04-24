@@ -2,16 +2,16 @@
 {% block content %}
 <h1>{{ title }}</h1>
 <form action="/application-success" method="POST">
-  <input type="text" name="first_name" placeholder="First Name" required>
-  <input type="text" name="last_name" placeholder="Last Name" required>
-  <input type="text" name="salary" placeholder="Salary" required>
+  <label>First Name <br><input type="text" name="first_name" placeholder="Mel" required></label>
+  <label>Last Name <br><input type="text" name="last_name" placeholder="Melitopolski" required></label>
+  <label>Salary <br><input type="text" name="salary" placeholder="1,234,567.89" required></label>
     <select name="job" required>
       <option value="SWE">Software Engineer</option>
       <option value="QA">QA Engineer</option>
       <option value="PM">Product Manager</option>
     </select>
   <div class="submit">
-    <input type="submit" class="btn btn-default">
+    <input type="submit" class="btn btn-default" href="/application-success">
   </div>        
 </form>
 {% endblock %}

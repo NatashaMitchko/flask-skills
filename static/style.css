@@ -1,0 +1,51 @@
+
+body {
+    height: 500%;
+    padding: 30px 0;
+    text-align: left;
+    background-color: #6f5499;
+    background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
+    font-family: "Raleway", Helvetica, sans-serif;
+
+}
+
+/*Make sure the html/ body blocks fill the entire screen*/
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* override h1 default margin of 10px*/
+h1 {
+    margin-bottom: 20px;
+    color:white;
+}
+
+select {
+    margins:16px;
+}
+
+a, a:hover, a:focus {
+    color: white;
+    text-decoration: underline;
+}
+
+label {
+    display: block;
+}
+
+/* In base - wraps around block content */
+.text {
+    border: 2px;
+    border-color: white;
+}
+
+.submit {
+    padding-top: 8px;
+}
+
+/*Override bootstrap button text color*/
+.btn-default {
+    color: rgb(111, 84, 153);
+}

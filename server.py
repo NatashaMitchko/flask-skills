@@ -12,18 +12,20 @@ app.secret_key = "H4587YWVJUFT7YGW57HGW457H498209238SERUGH" #very secret
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',
+                            title="Home")
 
 @app.route('/application-form')
 def application_form():
     title = "Apply Now"
     return render_template('application-form.html', title=title)
 
-@app.route('/application-success')
+@app.route('/application-success', methods=['POST'])
 def application_response():
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     salary = request.form.get('salary')
+    salary = "${:,.2f}".format(float(salary))
     job = request.form.get('job')
 
     if job == 'SWE':
